@@ -1,4 +1,4 @@
-{% set version = "2020.12.08" %}
+{% set version = "2021.10.10" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/riskRegression_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/riskRegression/riskRegression_{{ version }}.tar.gz
-  sha256: 5c990d1727c8d3f5ca92d24e8ac6e9061e4a2ffebcd160d99ba8c9cbdc004675
+  sha256: 8471f351c6fca80ba62c0f8d72dc915b6fe2ab06513127d6c725c1f371b213ba
 
 build:
   merge_build_host: true  # [win]
