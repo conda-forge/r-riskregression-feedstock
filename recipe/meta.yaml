@@ -1,6 +1,5 @@
 {% set version = "2023.12.21" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-riskregression
@@ -13,8 +12,7 @@ source:
   sha256: ac4ca90c4d533b3eb7659bc6b5a8ae6bd18eb9a08f619d3d19314cb10d929b1d
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -53,7 +53,6 @@ requirements:
     - libblas
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-publish
     - r-rcpp
     - r-rcpparmadillo
