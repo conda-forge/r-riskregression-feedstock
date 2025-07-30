@@ -1,4 +1,4 @@
-{% set version = "2023.12.21" %}
+{% set version = "2025.05.20" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/riskRegression_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/riskRegression/riskRegression_{{ version }}.tar.gz
-  sha256: ac4ca90c4d533b3eb7659bc6b5a8ae6bd18eb9a08f619d3d19314cb10d929b1d
+  sha256: fbdd0039de3989dcbb8111cbca67ba88d6385d4556ba02496789661bea9752c8
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -40,12 +44,13 @@ requirements:
     - r-doparallel
     - r-foreach
     - r-ggplot2 >=3.1.0
+    - r-glmnet
     - r-lattice
     - r-lava >=1.6.5
     - r-mets
     - r-mvtnorm
     - r-plotrix
-    - r-prodlim >=2018.4.18
+    - r-prodlim >=2025.4.28
     - r-ranger
     - r-rms >=5.1.3
     - r-survival >=2.44.1
@@ -61,12 +66,13 @@ requirements:
     - r-doparallel
     - r-foreach
     - r-ggplot2 >=3.1.0
+    - r-glmnet
     - r-lattice
     - r-lava >=1.6.5
     - r-mets
     - r-mvtnorm
     - r-plotrix
-    - r-prodlim >=2018.4.18
+    - r-prodlim >=2025.4.28
     - r-ranger
     - r-rms >=5.1.3
     - r-survival >=2.44.1
