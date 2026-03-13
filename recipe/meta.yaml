@@ -1,4 +1,4 @@
-{% set version = "2026.02.13" %}
+{% set version = "2026.03.11" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/riskRegression_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/riskRegression/riskRegression_{{ version }}.tar.gz
-  sha256: 45626eb33864b93c8f4a2bcab97f2f4a775360d2afac9c15d52fd372d9481705
+  sha256: 7c6e4af9a1a165212f24cd9f8065d0fdda39f3ada9ff97b88c31c30e3263f5ce
 
 build:
   number: 0
