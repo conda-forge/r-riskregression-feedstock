@@ -59,7 +59,6 @@ requirements:
     - libblas
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-hmisc
     - r-publish
     - r-rcpp
