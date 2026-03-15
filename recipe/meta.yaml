@@ -36,6 +36,7 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-hmisc
     - r-publish
     - r-rcpp
     - r-rcpparmadillo
@@ -50,7 +51,7 @@ requirements:
     - r-mets
     - r-mvtnorm
     - r-plotrix
-    - r-prodlim >=2025.4.28
+    - r-prodlim >=2026.3.7
     - r-ranger
     - r-rms >=5.1.3
     - r-survival >=2.44.1
@@ -58,6 +59,8 @@ requirements:
     - libblas
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
+    - r-hmisc
     - r-publish
     - r-rcpp
     - r-rcpparmadillo
@@ -72,7 +75,7 @@ requirements:
     - r-mets
     - r-mvtnorm
     - r-plotrix
-    - r-prodlim >=2025.4.28
+    - r-prodlim >=2026.3.7
     - r-ranger
     - r-rms >=5.1.3
     - r-survival >=2.44.1
@@ -84,7 +87,7 @@ test:
     - "\"%R%\" -e \"library('riskRegression')\""  # [win]
 
 about:
-  home: https://CRAN.R-project.org/package=riskRegression
+  home: https://github.com/tagteam/riskRegression
   license: GPL-2.0-or-later
   summary: Implementation of the following methods for event history analysis. Risk regression models for survival endpoints also in the presence of competing risks are fitted using binomial regression based on a time sequence of binary event status variables. A formula interface for the Fine-Gray regression model and 
     an interface for the combination of cause-specific Cox regression models. A toolbox for assessing and comparing performance of risk predictions (risk markers and risk prediction models). Prediction performance is measured by the Brier score and the area under the ROC curve for binary possibly time-dependent 
