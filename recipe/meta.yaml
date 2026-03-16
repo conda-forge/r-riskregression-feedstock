@@ -1,4 +1,4 @@
-{% set version = "2026.02.13" %}
+{% set version = "2026.03.11" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/riskRegression_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/riskRegression/riskRegression_{{ version }}.tar.gz
-  sha256: 45626eb33864b93c8f4a2bcab97f2f4a775360d2afac9c15d52fd372d9481705
+  sha256: 7c6e4af9a1a165212f24cd9f8065d0fdda39f3ada9ff97b88c31c30e3263f5ce
 
 build:
   number: 0
@@ -36,6 +36,7 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-hmisc
     - r-publish
     - r-rcpp
     - r-rcpparmadillo
@@ -50,7 +51,7 @@ requirements:
     - r-mets
     - r-mvtnorm
     - r-plotrix
-    - r-prodlim >=2025.4.28
+    - r-prodlim >=2026.3.7
     - r-ranger
     - r-rms >=5.1.3
     - r-survival >=2.44.1
@@ -58,6 +59,7 @@ requirements:
     - libblas
   run:
     - r-base
+    - r-hmisc
     - r-publish
     - r-rcpp
     - r-rcpparmadillo
@@ -72,7 +74,7 @@ requirements:
     - r-mets
     - r-mvtnorm
     - r-plotrix
-    - r-prodlim >=2025.4.28
+    - r-prodlim >=2026.3.7
     - r-ranger
     - r-rms >=5.1.3
     - r-survival >=2.44.1
@@ -84,7 +86,7 @@ test:
     - "\"%R%\" -e \"library('riskRegression')\""  # [win]
 
 about:
-  home: https://CRAN.R-project.org/package=riskRegression
+  home: https://github.com/tagteam/riskRegression
   license: GPL-2.0-or-later
   summary: Implementation of the following methods for event history analysis. Risk regression models for survival endpoints also in the presence of competing risks are fitted using binomial regression based on a time sequence of binary event status variables. A formula interface for the Fine-Gray regression model and 
     an interface for the combination of cause-specific Cox regression models. A toolbox for assessing and comparing performance of risk predictions (risk markers and risk prediction models). Prediction performance is measured by the Brier score and the area under the ROC curve for binary possibly time-dependent 

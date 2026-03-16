@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-riskregressio
 About r-riskregression
 ----------------------
 
-Home: https://CRAN.R-project.org/package=riskRegression
+Home: https://github.com/tagteam/riskRegression
 
 Package license: GPL-2.0-or-later
 
@@ -16,7 +16,7 @@ Summary: Implementation of the following methods for event history analysis. Ris
 About r-riskregression
 ----------------------
 
-Home: https://CRAN.R-project.org/package=riskRegression
+Home: https://github.com/tagteam/riskRegression
 
 Package license: GPL-2.0-or-later
 
